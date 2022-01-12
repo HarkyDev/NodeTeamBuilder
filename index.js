@@ -1,12 +1,17 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateHtml = require("./utils/generateHtml");
+
+const path = require("path")
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
 const employeeArr = [];
+
+
+const indexHtmlFile = path.join(__dirname, "team.html")
 
 function startQuestions() {
 
@@ -84,44 +89,6 @@ function startQuestions() {
       });
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const createManager = () => {
     inquirer
       .prompt([
@@ -180,11 +147,20 @@ function startQuestions() {
         else {
           console.log("We Don't need anything else");
           // this is where call for our markup function
+
+          buildTeam()
         }
       });
   };
 
+
+
+  function buildTeam () {
+    fs.writeFileSync(indexHtmlFile, generateHtml(employeeArr), "utf-8" )
+  }
+  
   createManager();
+
 }
 
 startQuestions();
@@ -196,7 +172,7 @@ startQuestions();
 //         fs.writeFile("index.html", content, (err) =>
 //           err
 //             ? console.log(err)
-//             : console.log("Created 'README.MD'")
+//             : console.log("Created 'index.html file'")
 //         );
 //       });
 // }
