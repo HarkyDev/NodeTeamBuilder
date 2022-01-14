@@ -12,7 +12,7 @@ function createManager(manager){
              <div class="shadow-2xl shadow-black m-4 max-w-sm bg-white rounded-t-3xl rounded-b-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
           <div class="bg-blue-500 p-4 rounded-t-lg">
               <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${manager.name}</p>
-              <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${manager.getRole()}</p>
+              <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white"><span><i class="fas fa-mug-hot"></i></span>  ${manager.getRole()}</p>
           </div>
         <div class="p-16">
           <p class="m-4" > <span class="font-bold ">ID: </span> ${manager.id}</p>
@@ -40,12 +40,15 @@ function createEngineer(engineer){
         <div class="shadow-2xl shadow-black m-4 max-w-sm bg-white rounded-t-3xl rounded-b-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="bg-blue-500 p-4 rounded-t-lg">
             <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${engineer.name}</p>
-            <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${engineer.getRole()}</p>
+            <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white"><span><i class="fas fa-cogs" style="color: white"></i></span>   ${engineer.getRole()}</p>
         </div>
       <div class="p-16">
         <p class="m-4" > <span class="font-bold ">ID: </span> ${engineer.id}</p>
         <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> ${engineer.email}</p>
+
+        <a href="https://github.com/${engineer.gitHub}" target="_blank">
         <p class="m-4" > <span class="font-bold ">GITHUB: </span> ${engineer.gitHub} </p>
+        </a>
       </div>
     </div>
 
@@ -70,7 +73,7 @@ function createIntern(intern){
         <div class="shadow-2xl shadow-black m-4 max-w-sm bg-white rounded-t-3xl rounded-b-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="bg-blue-500 p-4 rounded-t-lg">
             <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${intern.name}</p>
-            <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${intern.getRole()}</p>
+            <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white"><span><i class="fas fa-graduation-cap"></i></span>  ${intern.getRole()}</p>
         </div>
       <div class="p-16">
         <p class="m-4" > <span class="font-bold ">ID: </span> ${intern.id}</p>
@@ -78,7 +81,7 @@ function createIntern(intern){
         <p class="m-4" > <span class="font-bold ">SCHOOL: </span> ${intern.school} </p>
       </div>
     </div>
-
+    <script src="https://kit.fontawesome.com/b87301694e.js" crossorigin="anonymous"></script>
 
 
         `
