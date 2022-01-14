@@ -7,16 +7,24 @@ const teamCardArr = [];
 function createManager(manager){
     console.log(manager)
         return `
-            <div>
-            name ${manager.name}
-            name ${manager.id}
-            name ${manager.getOfficeNo}
-            name ${manager.email}
-            </div>
-        `
-    
 
+        
+             <div class="shadow-2xl shadow-black m-4 max-w-sm bg-white rounded-t-3xl rounded-b-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+          <div class="bg-blue-500 p-4 rounded-t-lg">
+              <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${manager.name}</p>
+              <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${manager.getRole()}</p>
+          </div>
+        <div class="p-16">
+          <p class="m-4" > <span class="font-bold ">ID: </span> ${manager.id}</p>
+          <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> ${manager.email}</p>
+          <p class="m-4" > <span class="font-bold ">OFFICE NUMBER: </span> ${manager.officeNo} </p>
+        </div>
+      </div>
+        `
 }
+
+
+
 
 teamCardArr.push(
     profiles
@@ -24,11 +32,55 @@ teamCardArr.push(
     .map((manager) => createManager(manager))
 )
 
+function createEngineer(engineer){
+    console.log(engineer)
+        return `
+TEST FOR ENGINEER PASS
+${engineer.name}
+${engineer.name}
+${engineer.name}
+
+        `
+}
+
+
+
+
+teamCardArr.push(
+    profiles
+    .filter((employee) => employee.getRole() === "Engineer")
+    .map((engineer) => createManager(engineer))
+)
+
+
+
 
 
 return teamCardArr.join('')
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module.exports = (profiles) =>{
@@ -40,9 +92,18 @@ module.exports = (profiles) =>{
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
     <title>Document</title>
 </head>
 <body>
+<div class="bg-red-500 min-w-full text-center">
+          <h1 class="min-h-300 text-white font-semibold p-20 text-5xl">MY TEAM</h1>
+        </div>
+        <div class="cardContainer bg-white flex flex-row flex-wrap min-h-full items-center justify-center ">
+          
     
 ${generateCard(profiles)}
 </body>
