@@ -36,20 +36,19 @@ function createEngineer(engineer){
     console.log(engineer)
         return `
 TEST FOR ENGINEER PASS
-${engineer.name}
-${engineer.name}
-${engineer.name}
+<div>this is a test for the engineer slots    ${engineer.name} </div>
+<div>this is a test for the engineer slots    ${engineer.id} </div>
+<div>this is a test for the engineer slots    ${engineer.getRole()} </div>
+<div>this is a test for the engineer slots    ${engineer.gitHub} </div>
 
         `
 }
 
 
-
-
 teamCardArr.push(
     profiles
     .filter((employee) => employee.getRole() === "Engineer")
-    .map((engineer) => createManager(engineer))
+    .map((engineer) => createEngineer(engineer))
 )
 
 
