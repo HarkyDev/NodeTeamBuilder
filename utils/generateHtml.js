@@ -3,7 +3,7 @@
 function generateCard (profiles){
 
 const teamCardArr = [];
-
+// manger generator
 function createManager(manager){
     console.log(manager)
         return `
@@ -32,14 +32,25 @@ teamCardArr.push(
     .map((manager) => createManager(manager))
 )
 
+
+// engineer generator
 function createEngineer(engineer){
     console.log(engineer)
         return `
-TEST FOR ENGINEER PASS
-<div>this is a test for the engineer slots    ${engineer.name} </div>
-<div>this is a test for the engineer slots    ${engineer.id} </div>
-<div>this is a test for the engineer slots    ${engineer.getRole()} </div>
-<div>this is a test for the engineer slots    ${engineer.gitHub} </div>
+        <div class="shadow-2xl shadow-black m-4 max-w-sm bg-white rounded-t-3xl rounded-b-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <div class="bg-blue-500 p-4 rounded-t-lg">
+            <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${engineer.name}</p>
+            <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${engineer.getRole()}</p>
+        </div>
+      <div class="p-16">
+        <p class="m-4" > <span class="font-bold ">ID: </span> ${engineer.id}</p>
+        <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> ${engineer.email}</p>
+        <p class="m-4" > <span class="font-bold ">GITHUB: </span> ${engineer.gitHub} </p>
+      </div>
+    </div>
+
+
+
 
         `
 }
@@ -49,6 +60,35 @@ teamCardArr.push(
     profiles
     .filter((employee) => employee.getRole() === "Engineer")
     .map((engineer) => createEngineer(engineer))
+)
+
+
+// intern generator
+function createIntern(intern){
+    console.log(intern)
+        return `
+        <div class="shadow-2xl shadow-black m-4 max-w-sm bg-white rounded-t-3xl rounded-b-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <div class="bg-blue-500 p-4 rounded-t-lg">
+            <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${intern.name}</p>
+            <p class=" ml-4 mb-2 text-2xl font-bold tracking-tight text-white">${intern.getRole()}</p>
+        </div>
+      <div class="p-16">
+        <p class="m-4" > <span class="font-bold ">ID: </span> ${intern.id}</p>
+        <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> ${intern.email}</p>
+        <p class="m-4" > <span class="font-bold ">SCHOOL: </span> ${intern.school} </p>
+      </div>
+    </div>
+
+
+
+        `
+}
+
+
+teamCardArr.push(
+    profiles
+    .filter((employee) => employee.getRole() === "Intern")
+    .map((intern) => createIntern(intern))
 )
 
 
