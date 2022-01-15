@@ -36,15 +36,27 @@ test('can we add an email to this object', () => {
 
 )
 
-//TEST TO SEE IF WE CAN CREATE AN OBJECT WITH EMPLOYEE CLASS THAT CONTAINS ALL THREE PARAMS OF THE CLASS: "NAME , ID, EMAIL"
+//TEST TO SEE IF WE CAN CREATE AN OBJECT WITH OUR "OFFICENO" PARAM
+test('can we add an office number to this object', () => {
+    const officeNo = '1977412'
+    const newOfficeNo = new Manager("name","id","email",officeNo)
+
+    expect(newOfficeNo.officeNo).toBe(officeNo)
+}
+
+)
+
+//TEST TO SEE IF WE CAN CREATE AN OBJECT WITH EMPLOYEE CLASS THAT CONTAINS ALL THREE PARAMS OF THE CLASS: "NAME , ID, EMAIL, OFFICENO"
 test('can we create an object that holds all three params that we want to input', () => {
     const name = 'user'
     const id = '44544'
     const email = 'example@gmail.com'
-    const newManagerObject = new Manager(name,id,email)
+    const officeNo = '1977412'
+    const newManagerObject = new Manager(name,id,email,officeNo)
     expect(newManagerObject.name).toBe(name)
     expect(newManagerObject.id).toBe(id)
     expect(newManagerObject.email).toBe(email)
+    expect(newManagerObject.officeNo).toBe(officeNo)
 }
 
 )
