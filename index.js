@@ -156,7 +156,7 @@ function startQuestions() {
 
 
   function buildTeam () {
-    fs.writeFileSync(indexHtmlFile, generateHtml(employeeArr), "utf-8" )
+    fs.writeFileSync(indexHtmlFile, generateHtml(employeeArr), "utf-8")
   }
   
   createManager();
