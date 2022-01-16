@@ -16,7 +16,9 @@ function createManager(manager){
           </div>
         <div class="p-16">
           <p class="m-4" > <span class="font-bold ">ID: </span> ${manager.id}</p>
-          <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> ${manager.email}</p>
+          <a href="mailto:${manager.email}">
+          <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> <span class="hover:text-blue-500 hover:underline ease-in-out duration-700">${manager.email}</span> </p>
+          </a>
           <p class="m-4" > <span class="font-bold ">OFFICE NUMBER: </span> ${manager.officeNo} </p>
         </div>
       </div>
@@ -44,10 +46,12 @@ function createEngineer(engineer){
         </div>
       <div class="p-16">
         <p class="m-4" > <span class="font-bold ">ID: </span> ${engineer.id}</p>
-        <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> ${engineer.email}</p>
+        <a href="mailto:${engineer.email}">
+        <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> <span class="hover:text-blue-500 hover:underline ease-in-out duration-700"> ${engineer.email}</span></p>
+        </a>
 
         <a href="https://github.com/${engineer.gitHub}" target="_blank">
-        <p class="m-4" > <span class="font-bold ">GITHUB: </span> ${engineer.gitHub} </p>
+        <p class="m-4" > <span class="font-bold ">GITHUB: </span><span class="hover:text-blue-500 hover:underline ease-in-out duration-700"> ${engineer.gitHub}</span> </p>
         </a>
       </div>
     </div>
@@ -77,7 +81,9 @@ function createIntern(intern){
         </div>
       <div class="p-16">
         <p class="m-4" > <span class="font-bold ">ID: </span> ${intern.id}</p>
-        <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> ${intern.email}</p>
+        <a href="mailto:${intern.email}">
+        <p class="m-4 mt-10 mb-10" > <span class="font-bold ">EMAIL: </span> <span class="hover:text-blue-500 hover:underline ease-in-out duration-700"> ${intern.email}</span></p>
+        </a>
         <p class="m-4" > <span class="font-bold ">SCHOOL: </span> ${intern.school} </p>
       </div>
     </div>
@@ -141,6 +147,7 @@ module.exports = (profiles) =>{
     <title>Document</title>
 </head>
 <body>
+<script src="https://kit.fontawesome.com/b87301694e.js" crossorigin="anonymous"></script>
 <div class="bg-red-500 min-w-full text-center">
           <h1 class="min-h-300 text-white font-semibold p-20 text-5xl">MY TEAM</h1>
         </div>
